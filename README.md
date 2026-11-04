@@ -11,6 +11,14 @@ This project includes:
 
 ## Dataset
 Mannually input #TODO Random generator
+### factors:
+- Student ID
+- name
+- year (e.g. 2026)
+- department
+- moduleCOde
+- moduleTitie
+- moduleTutor
 
 ## Requirement
 - Python
