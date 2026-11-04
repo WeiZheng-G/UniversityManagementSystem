@@ -1,4 +1,4 @@
-from src.SAMR import Student
+from src.studentmanagement import Student
 import pandas as pd
 
 #Dataset Student loading
@@ -13,33 +13,34 @@ print("-----------------------------------")
 print("Please check README.md usage field")
 print("-----------------------------------")
 
-# Main process
+# Main process_
 while prompt != "exit":
-    prompt = input("Enter command: ")
+    prompt = input("$$: ")
     match prompt:
-        case "student_list":
+        case "list":
             student.display()
-        case "student_register":
+        case "register":
             print("Enter student information")
             id = int(input("Student ID: "))
             name = input("name: ")
             year = input("year: ")
-            department = input("department: ")
-            module = input("module: ")
-            isEnrol = "No"
-            student.register(id, name, year, department, module, isEnrol)
-        case "student_update":
+            student.register(id, name, year)
+        case "update":
             id = int(input("Student ID: "))
             print("Enter update information, <Enter> for unchange")
             name = input("name: ")
             year = input("year: ")
-            department = input("department: ")
-            module = input("module: ")
-            isEnrol = "No"
-            student.update(id, name, year, department, module, isEnrol)
-        case "student_search":
+            student.update(id, name, year)
+        case "search":
             id = int(input("Student ID: "))
             student.search(id)
+        case "modules":
+            student.modules()
+        case "enrol":
+            id = int(input("Student ID: "))
+            moduleCode = input("moduleCode: ")
+            student.enrol(id,moduleCode)
+        # Exception command
         case "exit":
             print("Program exits.")
         case _:

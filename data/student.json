@@ -1,26 +1,23 @@
 {
     "id":{
-        "1":1,
-        "2":2
+        "1":1
     },
     "name":{
-        "1":"Wei",
-        "2":"Xue"
+        "1":"Wei"
     },
     "year":{
-        "1":1998,
-        "2":2000
+        "1":"1998"
     },
     "department":{
-        "1":"Computing",
-        "2":"Sports"
+        "1":"Computing school"
     },
-    "module":{
-        "1":"CS",
-        "2":"PE"
+    "moduleCode":{
+        "1":"002"
     },
-    "isEnrol":{
-        "1":"No",
-        "2":"No"
+    "moduleTitle":{
+        "1":"CS"
+    },
+    "moduleTutor":{
+        "1":"Ben"
     }
 }
