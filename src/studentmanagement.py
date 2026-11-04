@@ -4,7 +4,7 @@ class Student:
         self.data = dataset.set_index("id",drop=False)
 
     # Register
-    def register(self,id:int, name:str, year:str, department:str="", moduleCode:str="", moduleTitle:str="", moduleTutor=""):
+    def register(self,id:int, name:str, year:int, department:str="", moduleCode:str="", moduleTitle:str="", moduleTutor=""):
         if (self._check(id)):
             print("Error: Register failed due to same id existing")
         else:
@@ -18,7 +18,7 @@ class Student:
         print(self.data[["id","name","year","department","moduleCode", "moduleTitle","moduleTutor"]].to_string(index=False))
 
     # Update
-    def update(self, id:int, name:str, year:str):
+    def update(self, id:int, name:str, year:int):
         if (self._check(id)):
             columns = ("id", "name", "year")
             values = (id, name, year)
@@ -39,25 +39,25 @@ class Student:
     # Available modules
     def modules(self):
         print("available modules:\n" \
-        "001. Science school - Math - Yan\n" \
-        "002. Computing school - CS - Ben\n" \
-        "003. Sports school - PE - Sam")
+        "Code: MH - Science school - Mathematics - Yan\n" \
+        "Code: CS - Computing school - ComputerScience - Ben\n" \
+        "Code: PE - Sports school - Football - Sam")
 
     # Enrol
     def enrol(self, id:int, moduleCode:str):
         if (self._check(id)):
             match moduleCode:
-                case "001":
+                case "MH":
                     department = "Science school"
-                    moduleTitle = "Math"
+                    moduleTitle = "Mathematics"
                     moduleTutor = "Yan"
-                case "002":
+                case "CS":
                     department = "Computing school"
-                    moduleTitle = "CS"
+                    moduleTitle = "ComputerScience"
                     moduleTutor = "Ben"
-                case "003":
+                case "PE":
                     department = "Sports school"
-                    moduleTitle = "PE"
+                    moduleTitle = "Football"
                     moduleTutor = "Sam"
                 case _:
                     print("enrol failed: module not exist")

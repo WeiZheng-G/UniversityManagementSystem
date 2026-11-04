@@ -6,16 +6,16 @@
         "1":"Wei"
     },
     "year":{
-        "1":"1998"
+        "1":2026
     },
     "department":{
         "1":"Computing school"
     },
     "moduleCode":{
-        "1":"002"
+        "1":"CS"
     },
     "moduleTitle":{
-        "1":"CS"
+        "1":"ComputerScience"
     },
     "moduleTutor":{
         "1":"Ben"

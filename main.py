@@ -23,13 +23,13 @@ while prompt != "exit":
             print("Enter student information")
             id = int(input("Student ID: "))
             name = input("name: ")
-            year = input("year: ")
+            year = int(input("year: "))
             student.register(id, name, year)
         case "update":
             id = int(input("Student ID: "))
             print("Enter update information, <Enter> for unchange")
             name = input("name: ")
-            year = input("year: ")
+            year = int(input("year: "))
             student.update(id, name, year)
         case "search":
             id = int(input("Student ID: "))
