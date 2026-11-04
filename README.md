@@ -9,10 +9,11 @@ This project includes:
 [Project requirement pdf](./doc/University_Management_System_Midterm_Project.pdf)
 ## Dataset
 Mannually input (Random generator TODO)
-
+## Requirement
+- Python
+- pandas ``pip install pandas``
 ## Implementation
 Run ``python main.py``
-- pandas required
 
 Enter ``<command>``
 
