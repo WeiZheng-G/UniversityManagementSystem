@@ -17,12 +17,13 @@ Mannually input #TODO Random generator
 - pandas ``pip install pandas``
 
 ## Implementation
-- <main.py>: main processor
-- <studentmanagement.py>:
-    
+- **<main.py>**: main processor
+- **<studentmanagement.py>**:
+
     Functions of :
     - Student and module records: register, display, search, update
     - Enrolment management: modules list, enrol
+- **<student.json>**: Dataset file, used for load and save
 
 ## Usage
 Run ``python main.py``
@@ -35,4 +36,4 @@ Enter ``<command>``:
 - ``search``: Search student info using student id
 - ``modules``: List available modules
 - ``enrol``: Enrol student on module using student ID and module code
-- ``exit`` to exit program
+- ``exit`` to exit program, autosave
