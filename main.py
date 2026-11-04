@@ -1,34 +1,17 @@
 from src.SAMR import Student
+import pandas as pd
 
-modules = {
-    "code":[101,102,103],
-    "title":["Math","English","PE"],
-    "Tutor":["A","B","C"]
-}
-
-students = {
-    "id":[1],
-    "name":["Wei"],
-    "year":[1998],
-    "department":["Science"],
-    "module":["Math"],
-    "isEnrol":["No"]
-}
+#Dataset Student loading
+students = pd.read_json('./data/student.json')
 
 # Create object
 student = Student(students)
 
 # Usage
 prompt = ""
-print("---------------------------------")
-print("Command menu:\n" \
-"1. Student and module records\n" \
-"   1.1 <student_list>\n" \
-"   1.2 <student_register>\n" \
-"   1.3 <student_update>\n" \
-"   1.4 <student_search>\n" \
-"<exit>: Exit program")
-print("---------------------------------")
+print("-----------------------------------")
+print("Please check README.md usage field")
+print("-----------------------------------")
 
 # Main process
 while prompt != "exit":
@@ -40,7 +23,7 @@ while prompt != "exit":
             print("Enter student information")
             id = int(input("Student ID: "))
             name = input("name: ")
-            year = int(input("year: "))
+            year = input("year: ")
             department = input("department: ")
             module = input("module: ")
             isEnrol = "No"
@@ -61,3 +44,6 @@ while prompt != "exit":
             print("Program exits.")
         case _:
             print("Unknow command, enter again")
+
+# dataset update
+student.data.to_json('./data/student.json', indent=4)

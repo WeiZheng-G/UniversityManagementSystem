@@ -1,10 +1,7 @@
 # Student Object
-import pandas as pd
-
 class Student:
-    def __init__(self, dataset:dict):
-        self.data = pd.DataFrame(dataset)
-        self.data = self.data.set_index("id",drop=False)
+    def __init__(self, dataset:object):
+        self.data = dataset.set_index("id",drop=False)
 
     # Register
     def register(self,id:int, name:str, year:str, department:str, module:str, isEnrol:str):
@@ -15,7 +12,6 @@ class Student:
             self.data = self.data.set_index("id",drop=False)
             self.data = self.data.sort_index()
             print("Register successful.")
-
 
     # Display lists
     def display(self):
