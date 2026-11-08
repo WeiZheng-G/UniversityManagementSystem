@@ -60,4 +60,5 @@ Enter ``<command>``:
 - ``stat``: Plot bar&scatter&line graphs of mark verses year
 - ``missing``: check dataset missing
 - ``duplicate``: check dataset duplicating
-- ``exit`` to exit program, autosave
+- ``save`` to exit program with save
+- ``exit`` to exit program without save

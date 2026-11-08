@@ -23,7 +23,7 @@ print("Please check README.md usage field")
 print("-----------------------------------")
 
 # Main process_
-while prompt != "exit":
+while (1) :
     prompt = input("$$: ")
     match prompt:
         case "list":
@@ -67,8 +67,12 @@ while prompt != "exit":
             display(dashboard.duplicate())
         # Exception command
         case "exit":
-            print("Program exited.")
+            break
+        case "save":
+            student.data.to_json('./data/student.json', indent=4)
+            print("Data saved.")
+            break
         case _:
             print("Unknow command, enter again")
 
-student.data.to_json('./data/student.json', indent=4)
+print("Program exited.")
