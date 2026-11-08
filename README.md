@@ -28,6 +28,7 @@ Use generator generates finctional dataset randomly.
 - Python
 - pandas ``pip install pandas``
 - matplotlib ``pip install matplotlib``
+- Numpy ``pip insatll numpy``
 
 ## Usage
 install ``git clone https://github.com/WeiZheng-G/UniversityManagementSystem.git`` and ``cd UniversityManagementSystem``
@@ -55,19 +56,21 @@ Enter ``<command>``:
 
 ## Layout
 ```
+.
 ├── data
-│   └── student.json //Dataset file, used for load and save
+│   └── student.json
 ├── doc
-│   ├── University_Management_System_Midterm_Project.pdf
 │   ├── structure.png
-│   └── structure.puml
-├── main.py //main processor
+│   ├── structure.puml
+│   └── University_Management_System_Midterm_Project.pdf
+├── generator.py
+├── main.py
 ├── README.md
 └── src
-    ├── Attendance.py //attendance display, mark display, rules change
-    ├── dashboard.py //statistics display, missing and duplicate check
-    ├── Enrol.py //available modules display, enrol
-    └── StudentInfo.py //attendance display, mark display, rules change
+    ├── Attendance.py
+    ├── dashboard.py
+    ├── Enrol.py
+    └── StudentInfo.py
 ```
 
 ## Implementation
