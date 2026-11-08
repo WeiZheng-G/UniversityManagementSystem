@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-class dashboard:
+class Dashboard:
     def __init__(self,obj:object):
         self.obj = obj
 

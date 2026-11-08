@@ -3,7 +3,7 @@ This is a coursework project of DataScience&Python.
 
 This project includes:
 - Project requirements document
-- Python implementation code
+- Python implementation code & structures
 - Project documentation
 
 ## Project requirements document
@@ -27,23 +27,9 @@ Mannually input #TODO Random generator
 - pandas ``pip install pandas``
 - matplotlib ``pip install matplotlib``
 
-## Implementation
-- **<main.py>**: main processor
-- **<StudentInfo.py>**:
-
-    - register, display, search, update
-- **<Enrol.py>**:
-
-    - available modules display, enrol
-- **<Attendance.py>**:
-
-    - attendance display, mark display, rules change
-- **<dashboard.py>**:
-
-    - statistics display, missing and duplicate check
-- **<student.json>**: Dataset file, used for load and save
-
 ## Usage
+install ``git clone https://github.com/WeiZheng-G/UniversityManagementSystem.git`` and ``cd UniversityManagementSystem``
+
 Run ``python main.py``
 
 Enter ``<command>``:
@@ -62,3 +48,23 @@ Enter ``<command>``:
 - ``duplicate``: check dataset duplicating
 - ``save`` to exit program with save
 - ``exit`` to exit program without save
+
+## Layout
+```
+├── data
+│   └── student.json //Dataset file, used for load and save
+├── doc
+│   ├── University_Management_System_Midterm_Project.pdf
+│   ├── structure.png
+│   └── structure.puml
+├── main.py //main processor
+├── README.md
+└── src
+    ├── Attendance.py //attendance display, mark display, rules change
+    ├── dashboard.py //statistics display, missing and duplicate check
+    ├── Enrol.py //available modules display, enrol
+    └── StudentInfo.py //attendance display, mark display, rules change
+```
+
+## Implementation
+![structure](doc/structure.png)

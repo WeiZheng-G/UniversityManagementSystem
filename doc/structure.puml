@@ -1,0 +1,39 @@
+@startuml structure
+allowmixing
+title IMPLEMENTATION
+class main {
+    +initialization()
+    +interactor()
+}
+class StudentInfo {
+    +register(id,name,year)
+    +display()
+    +update(id,name,year)
+    +search(id)
+    +check(id)
+}
+class Enrol {
+    +modules()
+    +enrol(id,moduleCode)
+}
+class Attend_Mark{
+    +Attend(id)
+    +Mark(id)
+    +rules(attend,mark)
+}
+class Dashboard{
+    +stat()
+    +missing()
+    +duplicate()
+}
+
+' Interface
+main ..> StudentInfo : Object interface
+StudentInfo ..> Enrol: Object interface
+StudentInfo ..> Attend_Mark: Object interface
+StudentInfo ..> Dashboard: Object interface
+' json
+file "student.json" as JSON
+JSON ..> main : reads
+main ..> JSON : writes
+@enduml
