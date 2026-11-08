@@ -11,7 +11,7 @@ This project includes:
 
 ## Dataset
 Mannually input #TODO Random generator
-- ### factors:
+- ### Attributes:
     - Student ID
     - name
     - year (e.g. 2026)
@@ -19,18 +19,28 @@ Mannually input #TODO Random generator
     - moduleCOde
     - moduleTitie
     - moduleTutor
+    - Attendance
+    - Mark
 
 ## Requirement
 - Python
 - pandas ``pip install pandas``
+- matplotlib ``pip install matplotlib``
 
 ## Implementation
 - **<main.py>**: main processor
-- **<studentmanagement.py>**:
+- **<StudentInfo.py>**:
 
-    Functions of :
-    - Student and module records: register, display, search, update
-    - Enrolment management: modules list, enrol
+    - register, display, search, update
+- **<Enrol.py>**:
+
+    - available modules display, enrol
+- **<Attendance.py>**:
+
+    - attendance display, mark display, rules change
+- **<dashboard.py>**:
+
+    - statistics display, missing and duplicate check
 - **<student.json>**: Dataset file, used for load and save
 
 ## Usage
@@ -44,4 +54,10 @@ Enter ``<command>``:
 - ``search``: Search student info using student id
 - ``modules``: List available modules
 - ``enrol``: Enrol student on module using student ID and module code
+- ``attend``: check student's attendance
+- ``mark``: check student's mark
+- ``rule``: change attendance&mark thresholds
+- ``stat``: Plot bar&scatter&line graphs of mark verses year
+- ``missing``: check dataset missing
+- ``duplicate``: check dataset duplicating
 - ``exit`` to exit program, autosave

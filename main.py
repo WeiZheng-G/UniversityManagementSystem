@@ -1,14 +1,23 @@
-from src.studentmanagement import Student
+from src.StudentInfo import Student
+from src.Enrol import Enrol
+from src.Attendance import Attend_Mark
+from src.dashboard import dashboard
+from IPython.display import display
 import pandas as pd
 
 #Dataset Student loading
 students = pd.read_json('./data/student.json')
+students_new = students.copy()
+students_new["Attendance"] = students_new["Attendance"].astype("object")
 
 # Create object
-student = Student(students)
+student = Student(students_new)
+enrol = Enrol(student)
+attend = Attend_Mark(student)
+dashboard = dashboard(student)
 
 # Usage
-prompt = ""
+prompt:str = ""
 print("-----------------------------------")
 print("Please check README.md usage field")
 print("-----------------------------------")
@@ -18,33 +27,48 @@ while prompt != "exit":
     prompt = input("$$: ")
     match prompt:
         case "list":
-            student.display()
+            display(student.display())
         case "register":
             print("Enter student information")
-            id = int(input("Student ID: "))
-            name = input("name: ")
-            year = int(input("year: "))
+            id:int = int(input("Student ID: "))
+            name:str = input("name: ")
+            year:int = int(input("year: "))
             student.register(id, name, year)
         case "update":
-            id = int(input("Student ID: "))
+            id:int = int(input("Student ID: "))
             print("Enter update information, <Enter> for unchange")
             name = input("name: ")
-            year = int(input("year: "))
+            year:int = int(input("year: "))
             student.update(id, name, year)
         case "search":
-            id = int(input("Student ID: "))
+            id:int = int(input("Student ID: "))
             student.search(id)
         case "modules":
             student.modules()
         case "enrol":
-            id = int(input("Student ID: "))
-            moduleCode = input("moduleCode: ")
-            student.enrol(id,moduleCode)
+            id:int = int(input("Student ID: "))
+            moduleCode:str = input("moduleCode: ")
+            enrol.enrol(id,moduleCode)
+        case "attend":
+            id:int = int(input("Student ID: "))
+            print(attend.Attend(id))
+        case "mark":
+            id:int = int(input("Student ID: "))
+            print(attend.Mark(id))
+        case "rule":
+            attend_thresholds:int = int(input("attend_thresholds: "))
+            mark_thresholds:int = int(input("mark_thresholds: "))
+            print(attend.rules(attend_thresholds,mark_thresholds))
+        case "stat":
+            dashboard.stat()
+        case "missing":
+            display(dashboard.missing())
+        case "duplicate":
+            display(dashboard.duplicate())
         # Exception command
         case "exit":
-            print("Program exits.")
+            print("Program exited.")
         case _:
             print("Unknow command, enter again")
 
-# dataset update
 student.data.to_json('./data/student.json', indent=4)

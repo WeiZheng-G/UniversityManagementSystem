@@ -1,23 +1,65 @@
 {
     "id":{
-        "1":1
+        "1":1,
+        "2":2,
+        "3":3
     },
     "name":{
-        "1":"Wei"
+        "1":"Wei",
+        "2":"Xu",
+        "3":"Nu"
     },
     "year":{
-        "1":2026
+        "1":2026,
+        "2":2025,
+        "3":2026
     },
     "department":{
-        "1":"Computing school"
+        "1":"Computing school",
+        "2":"Computing school",
+        "3":"Sports school"
     },
     "moduleCode":{
-        "1":"CS"
+        "1":"CS",
+        "2":"CS",
+        "3":"PE"
     },
     "moduleTitle":{
-        "1":"ComputerScience"
+        "1":"ComputerScience",
+        "2":"ComputerScience",
+        "3":"Football"
     },
     "moduleTutor":{
-        "1":"Ben"
+        "1":"Ben",
+        "2":"Ben",
+        "3":"Sam"
+    },
+    "Attendance":{
+        "1":[
+            "No",
+            "No",
+            "No",
+            "No",
+            "No"
+        ],
+        "2":[
+            "No",
+            "No",
+            "No",
+            "No",
+            "No"
+        ],
+        "3":[
+            "No",
+            "No",
+            "No",
+            "No",
+            "No"
+        ]
+    },
+    "Mark":{
+        "1":80,
+        "2":60,
+        "3":50
     }
 }
