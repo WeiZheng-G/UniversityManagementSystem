@@ -7,10 +7,12 @@ This project includes:
 - Project documentation
 
 ## Project requirements document
-[Project requirement pdf](./doc/University_Management_System_Midterm_Project.pdf)
+[Project requirement pdf](doc/University_Management_System_Midterm_Project.pdf)
 
 ## Dataset
-Mannually input #TODO Random generator
+
+Use generator generates finctional dataset randomly.
+
 - ### Attributes:
     - Student ID
     - name
@@ -29,6 +31,8 @@ Mannually input #TODO Random generator
 
 ## Usage
 install ``git clone https://github.com/WeiZheng-G/UniversityManagementSystem.git`` and ``cd UniversityManagementSystem``
+
+Run ``python generator.py`` to generate random dataset
 
 Run ``python main.py``
 

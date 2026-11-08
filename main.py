@@ -12,6 +12,8 @@ def initialization():
     students = pd.read_json("./data/student.json")
     students_new = students.copy()
     students_new["Attendance"] = students_new["Attendance"].astype("object")
+    students_new["year"] = students_new["year"].astype("Int64")
+    students_new["Mark"] = students_new["Mark"].astype("Int64")
     # Create object
     student = Student(students_new)
     enrol = Enrol(student)

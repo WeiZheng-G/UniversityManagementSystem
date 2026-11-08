@@ -26,6 +26,9 @@ class Dashboard{
     +missing()
     +duplicate()
 }
+class Generator{
+    +generate()
+}
 
 ' Interface
 main ..> StudentInfo : Object interface
@@ -34,6 +37,7 @@ StudentInfo ..> Attend_Mark: Object interface
 StudentInfo ..> Dashboard: Object interface
 ' json
 file "student.json" as JSON
-JSON ..> main : reads
-main ..> JSON : writes
+JSON ..> main : read
+main ..> JSON : write
+Generator ..> JSON : write
 @enduml
