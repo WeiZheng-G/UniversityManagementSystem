@@ -19,7 +19,7 @@ Use generator generates finctional dataset randomly.
     - year (e.g. 2026)
     - department
     - moduleCOde
-    - moduleTitie
+    - moduleTitle
     - moduleTutor
     - Attendance
     - Mark
