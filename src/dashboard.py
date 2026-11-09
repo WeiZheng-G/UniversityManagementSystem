@@ -1,4 +1,6 @@
 import matplotlib.pyplot as plt
+import numpy as np
+from scipy import stats
 
 
 class Dashboard:
@@ -9,9 +11,7 @@ class Dashboard:
     def stat(self):
         try:
             # cleaning
-            cleaning_data = self.obj.data.copy()
-            cleaning_data = cleaning_data.dropna()
-
+            cleaning_data = self.obj.data.copy().dropna().drop_duplicates(subset=["id"])
             print(cleaning_data["Mark"].describe().round(2))
 
             fig, axis = plt.subplots(1, 3, figsize=(7, 4))
@@ -69,3 +69,28 @@ class Dashboard:
             return self.obj.data[duplicated]
         else:
             return "No duplicated value"
+
+    def correlation(self):
+        alpha = 0.05
+        cleaning_data = self.obj.data.copy().dropna().drop_duplicates(subset=["id"])
+        # Pearson correlation between attendance vs marks
+        dataset = cleaning_data.loc[
+            cleaning_data["moduleCode"] == "CS",
+            ["Attendance", "Mark"]
+        ]
+        attendance_count = dataset["Attendance"].apply(
+            lambda x: (np.array(x) == "Yes").sum()
+        )
+        attendance_rate = attendance_count / 10
+        result = stats.pearsonr(
+            attendance_rate,
+            dataset["Mark"]
+        )
+        print(f"Pearson r: {result.statistic:.3f}\n")
+        print(f"P-value: {result.pvalue:.3g}\n")
+        decision_text = (
+            "Reject H0: There is no linear correlation between student attendance rate and marks in this dataset"
+            if result.pvalue <= alpha
+            else "Fail to reject H0: There is no linear correlation between student attendance rate and marks in this dataset"
+        )
+        print(decision_text)

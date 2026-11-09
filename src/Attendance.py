@@ -9,7 +9,7 @@ class Attend_Mark:
     def Attend(self, id: int):
         if self.obj._check(id):
             attendance = self.obj.data.loc[id, "Attendance"]
-            percentage = attendance.count("Yes") / 5
+            percentage = attendance.count("Yes") / 10
             if percentage >= self.attend_thresholds:
                 LABEL = "Safe"
             else:

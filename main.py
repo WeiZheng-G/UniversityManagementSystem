@@ -74,6 +74,8 @@ def interactor():
                 display(dashboard.missing())
             case "duplicate":
                 display(dashboard.duplicate())
+            case "correlation":
+                dashboard.correlation()
             # Exception command
             case "exit":
                 break

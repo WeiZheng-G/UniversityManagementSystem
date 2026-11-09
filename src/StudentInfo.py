@@ -16,7 +16,7 @@ class Student:
                 "",
                 "",
                 "",
-                ["No", "No", "No", "No", "No"],
+                ["No", "No", "No", "No", "No", "No", "No", "No", "No", "No"],
                 0,
             ]
             self.data = self.data.set_index("id", drop=False)

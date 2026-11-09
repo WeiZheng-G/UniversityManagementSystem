@@ -29,6 +29,7 @@ Use generator generates finctional dataset randomly.
 - pandas ``pip install pandas``
 - matplotlib ``pip install matplotlib``
 - Numpy ``pip insatll numpy``
+- scipy ``pip install scipy``
 
 ## Usage
 install ``git clone https://github.com/WeiZheng-G/UniversityManagementSystem.git`` and ``cd UniversityManagementSystem``
@@ -51,12 +52,12 @@ Enter ``<command>``:
 - ``stat``: Plot bar&scatter&line graphs of mark verses year
 - ``missing``: check dataset missing
 - ``duplicate``: check dataset duplicating
+- ``correlation``: investigate correlation between attendance rate and marks
 - ``save`` to exit program with save
 - ``exit`` to exit program without save
 
 ## Layout
 ```
-.
 ├── data
 │   └── student.json
 ├── doc
@@ -71,7 +72,23 @@ Enter ``<command>``:
     ├── dashboard.py
     ├── Enrol.py
     └── StudentInfo.py
+
+4 directories, 11 files
 ```
 
 ## Implementation
 ![structure](doc/structure.png)
+
+## Findings
+- This coursework has implemented a practical model of foundamental EDA operations, including data inspection, cleaning and statistical analysis.
+- Has implemented a simple Pearson correlation analysis, investigated the relationship between student attendance rates and marks.
+    - null hypothesis: There is no linear correlation between student attendance rate and marks in this dataset
+    - statistical significance threshold: 0.05
+    - results of ``correlation``:
+        - Pearson r: 0.418 (moderate-strong correlation)
+        - p-value: 0.0112 (which is smaller than 0.05)
+        - Conclusion: Reject null hypothesis
+    - Therefore, the result suggests that student attendances may be positively associated with marks.
+
+## Limitations
+- The dataset is intentionally generated with association of attendance and mark, in order to practise pearson correlation analysis, do not suggest the real-world case. And also have no potential confounding factors.
