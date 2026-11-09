@@ -4,7 +4,7 @@ This is a coursework project of DataScience&Python.
 This project includes:
 - Project requirements document
 - Python implementation code & structures
-- Project documentation
+- Fundings and limitations (fictional)
 
 ## Project requirements document
 [Project requirement pdf](doc/University_Management_System_Midterm_Project.pdf)
