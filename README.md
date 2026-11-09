@@ -52,7 +52,7 @@ Enter ``<command>``:
 - ``stat``: Plot bar&scatter&line graphs of mark verses year
 - ``missing``: check dataset missing
 - ``duplicate``: check dataset duplicating
-- ``correlation``: investigate pearson correlation between attendance rate and marks
+- ``correlation``: investigate pearson correlation between attendance rates and marks
 - ``save`` to exit program with save
 - ``exit`` to exit program without save
 
