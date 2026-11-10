@@ -87,8 +87,8 @@ class Dashboard:
             attendance_rate,
             dataset["Mark"]
         )
-        print(f"Pearson r: {result.statistic:.3f}")
-        print(f"P-value: {result.pvalue:.3g}")
+        print(f"Pearson r: {result.statistic}")
+        print(f"P-value: {result.pvalue}")
         print(f"Alpha: {alpha}")
         decision_text = (
             "Reject H0: There is no linear correlation between student attendance rate and marks in this dataset"
@@ -114,13 +114,14 @@ class Dashboard:
         })
         observed_dataset_cross = pd.crosstab(observed_dataset["Attendance"],observed_dataset["Label"])
         chi = stats.chi2_contingency(
-            observed_dataset_cross
+            observed_dataset_cross,
+            correction=False
         )
         chi_critical = stats.chi2.ppf(1 - alpha, 1)
-        print(f"chi statistic: {chi.statistic:.3f}")
-        print(f"chi critical value: {chi_critical:.3f}")
+        print(f"chi statistic: {chi.statistic}")
+        print(f"chi critical value: {chi_critical}")
         print(f"Alpha: 0.05")
-        print(f"p-value: {chi.pvalue:.3f}")
+        print(f"p-value: {chi.pvalue}")
         decision_text = (
             "Reject H0: Attendance category and pass/fail label are independent"
             if chi.pvalue <= alpha

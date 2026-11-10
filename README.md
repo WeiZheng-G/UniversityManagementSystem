@@ -87,20 +87,19 @@ Enter ``<command>``:
     - null hypothesis: There is no linear correlation between student attendance rate and marks in this dataset
     - statistical significance threshold: 0.05
     - results of ``correlation``:
-        - Pearson r: 0.418 (moderate-strong correlation)
-        - p-value: 0.0112 (which is smaller than 0.05)
+        - Pearson r: 0.3795293644986635 (moderate-strong correlation)
+        - p-value: 0.015718690747166166 (which is smaller than 0.05)
         - Conclusion: Reject null hypothesis
     - Therefore, the result suggests that student attendances may be positively associated with marks.
 - Has implemented a simple Chi-square statistic, investigated the relationship betwwen student attendances and labels.
     - null hypothesis: Attendance categories and pass/fail labels are independent
     - statistical significance threshold: 0.05
     - results of ``chi``:
-        - chi statistic: 2.199
-        - chi critical value: 3.841
-        - p-value: 0.138
-        - Conclusion: Fail to reject null hypothesis
-    - Therefore, there is insuffcient evidence to suggest an association between students' attendance catagories and pass/fail labels in this dataset.
-
+        - chi statistic: 41.6017316017316
+        - chi critical value: 3.841458820694124
+        - p-value: 1.1189412127660878e-10 (which is smaller than 0.05)
+        - Conclusion: Reject null hypothesis
+    - Therefore, the result suggests an association between students' attendance catagories and pass/fail labels in this dataset.
 
 ## Limitations
-- The dataset is intentionally generated with association of attendance and mark, and non-association of attendance catagories and label in order to practise pearson/chi correlation analysis, do not suggest the real-world case. And also have no potential confounding factors.
+- The dataset is intentionally generated with association between attendance and mark, association between attendance catagories and label in order to practise pearson/chi correlation analysis, do not suggest the real-world case. And also have no potential confounding factors.

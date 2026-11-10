@@ -19,10 +19,19 @@ def generator_dataset(n:int, seed=2026, include_issues=True):
     moduleTutor = rng.choice(["Yan", "Ben", "Sam"], size=n, p=[0.15, 0.70, 0.15])
     Attendance = rng.choice(["Yes", "No"], size=(n, 10), p=[0.75, 0.25])
     attendance_rate = (Attendance == "Yes").mean(axis=1)
-    Label = rng.choice(["Pass", "False"], size=n, p=[0.75, 0.25])
     base_mark = rng.normal(40, 10, size=n)
     Mark = base_mark + attendance_rate * 40
     Mark = np.clip(Mark, 0, 100).astype(int)
+    attendance_p = np.where(
+        attendance_rate >= 0.75,
+        0.9,
+        0.2
+    )
+    Label = np.where(
+        rng.random(n) < attendance_p,
+        "Pass",
+        "Fail"
+    )
     result = pd.DataFrame( 
         {
             "id": id,
