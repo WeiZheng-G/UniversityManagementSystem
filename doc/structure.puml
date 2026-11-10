@@ -26,6 +26,7 @@ class Dashboard{
     +missing()
     +duplicate()
     +correlation()
+    +chi()
 }
 class Generator{
     +generate()

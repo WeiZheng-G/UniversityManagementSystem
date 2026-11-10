@@ -22,6 +22,7 @@ Use generator generates finctional dataset randomly.
     - moduleTitle
     - moduleTutor
     - Attendance
+    - Label
     - Mark
 
 ## Requirement
@@ -53,6 +54,7 @@ Enter ``<command>``:
 - ``missing``: check dataset missing
 - ``duplicate``: check dataset duplicating
 - ``correlation``: investigate pearson correlation between attendance rates and marks
+- ``chi``: investigate chi-squre statistic between attendance and label
 - ``save`` to exit program with save
 - ``exit`` to exit program without save
 
@@ -89,6 +91,16 @@ Enter ``<command>``:
         - p-value: 0.0112 (which is smaller than 0.05)
         - Conclusion: Reject null hypothesis
     - Therefore, the result suggests that student attendances may be positively associated with marks.
+- Has implemented a simple Chi-square statistic, investigated the relationship betwwen student attendances and labels.
+    - null hypothesis: Attendance categories and pass/fail labels are independent
+    - statistical significance threshold: 0.05
+    - results of ``chi``:
+        - chi statistic: 2.199
+        - chi critical value: 3.841
+        - p-value: 0.138
+        - Conclusion: Fail to reject null hypothesis
+    - Therefore, there is insuffcient evidence to suggest an association between students' attendance catagories and pass/fail labels in this dataset.
+
 
 ## Limitations
-- The dataset is intentionally generated with association of attendance and mark, in order to practise pearson correlation analysis, do not suggest the real-world case. And also have no potential confounding factors.
+- The dataset is intentionally generated with association of attendance and mark, and non-association of attendance catagories and label in order to practise pearson/chi correlation analysis, do not suggest the real-world case. And also have no potential confounding factors.

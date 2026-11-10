@@ -76,6 +76,8 @@ def interactor():
                 display(dashboard.duplicate())
             case "correlation":
                 dashboard.correlation()
+            case "chi":
+                dashboard.chi()
             # Exception command
             case "exit":
                 break
